@@ -18,26 +18,29 @@ cgcnn_features = cgcnn_features_all.loc[data_all.index]
 cgcnn_features = pd.Series([np.asarray(row) for row in cgcnn_features], index=data_all.index)
 
 # Leave out samples as test set for moduli ML
-n_iter = 1000  # Total iterations of sampling
-n_test = 5799
+n_iter = 10  # Total iterations of sampling
+n_test = 4898
 rand_seed = 42
 data_test = data_all.sample(n=n_test, random_state=rand_seed)
 data = data_all.drop(data_test.index, inplace=False)
 features_test = cgcnn_features.loc[data_test.index]
 features = cgcnn_features.loc[data.index]
 
-n_unlabeled = 3000  # size of data left out as unlabeled
+n_unlabeled = 5000  # size of data left out as unlabeled
 # Select all unstable tetragonal -> unlabeled
 select1 = data.loc[(data.crys == 'tetragonal') & (data.formation_energy_peratom > 0)]
 remain1 = data.drop(select1.index, inplace=False)
 # Select all stable orthorhombic -> unlabeled
 select2 = data.loc[(data.crys == 'orthorhombic') & (data.formation_energy_peratom < 0)]
 remain2 = remain1.drop(select2.index, inplace=False)
+# All unstable trigonal
+select3 = data.loc[(data.crys == 'trigonal') & (data.formation_energy_peratom > 0)]
+remain3 = remain2.drop(select3.index, inplace=False)
 # Randomly select others
-rand_select = remain2.sample(n=(n_unlabeled-select1.shape[0]-select2.shape[0]), random_state=rand_seed)
+rand_select = remain3.sample(n=(n_unlabeled-select1.shape[0]-select2.shape[0]-select3.shape[0]), random_state=rand_seed)
 
-data_l = remain2.drop(rand_select.index, inplace=False)
-data_u = pd.concat([select1, select2, rand_select])
+data_l = remain3.drop(rand_select.index, inplace=False)
+data_u = pd.concat([select1, select2, select3, rand_select])
 
 # x = cgcnn feature vectors; y = formation energies
 y_labeled = data_l.formation_energy_peratom
@@ -108,15 +111,21 @@ for i in range(n_iter):
     exclude_sys = no_imp.index[no_imp[0] >= 5]  # Sys w/ no improvement in 5 iters
     sampling_sys = np.setdiff1d(available_sys, exclude_sys, assume_unique=True)
 
+    if not np.any(sampling_sys):
+        logging.info('Terminated at iteration ' + str(i) + ', samples run out.')
+        break
+
     entropies_available = entropies.iloc[-1][sampling_sys]
     lowest_h_sys = entropies_available.idxmin()
     h_curr = entropies_available[lowest_h_sys]  # Incumbent target value 
 
+    if sampling_sys.shape[0] == 1 and h_curr >= entropies.iloc[-1].max():
+        logging.info('Terminated at iteration ' + str(i) + ', no fairness improvement.')
+        break
+
     # Now only use the lowest entropy crystal system
     x_target_l = x_labeled.loc[x_labeled.crys == lowest_h_sys].copy()
-
     y_target_l = y_labeled.loc[x_target_l.index].copy()
-    
     
     x_in = torch.tensor(np.stack(x_target_l.feature.values), dtype=torch.float)
     y_in = torch.tensor(y_target_l.values, dtype=torch.float)
