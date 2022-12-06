@@ -1,5 +1,7 @@
 # Entropy-Targeted Active Learning
 
+[![DOI](https://zenodo.org/badge/521793176.svg)](https://zenodo.org/badge/latestdoi/521793176)
+
 This repository contains an implementation of entropy-targeted active learning (ET-AL) for materials data bias mitigation, associated with our paper.
 
 ## Copyright
