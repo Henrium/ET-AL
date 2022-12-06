@@ -2,10 +2,12 @@
 
 This repository contains an implementation of entropy-targeted active learning (ET-AL) for materials data bias mitigation, associated with our paper.
 
+![ET-AL algorithm](./etal_algorithm.png)
+
 ## Copyright
 This code is open-sourced under the MIT license. Feel free to use all or portions for your research or related projects so long as you provide the following citation information:
 
-Zhang, H., Chen, W. W., Rondinelli, J. M., and Chen W. (2022). ET-AL: entropy-targeted active learning for bias mitigation in materials data. arXiv preprint arXiv:2211.07881.
+Zhang, H., Chen, W. W., Rondinelli, J. M., and Chen W. (2022). [ET-AL: entropy-targeted active learning for bias mitigation in materials data](https://arxiv.org/abs/2211.07881). arXiv:2211.07881.
 
 ```
 @misc{zhang2022etal,
@@ -55,7 +57,7 @@ conda activate gp-torch
 ### Data preparation
 Organize the dataset in a Data Frame and change the data paths in `etal_main.py`. For demonstration purposes, a dataset derived from the Jarvis CFID data is provided in `datasets/`: the crystal structures and properties are in `data_cleaned.pkl`, and the graph embeddings are in `cgcnn_embeddings.pkl`.
 
-### Run models
+### Run code
 
 1. Set up experimental parameters in `etal_main.py`: `n_iter` for maximum number of ET-AL iterations, `n_test` for number of data points left as test set, `n_unlabeled` for number of data points left as unlabeled. Edit the following part to change the selection of unlabeled data.
 
