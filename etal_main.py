@@ -12,9 +12,7 @@ result_dir = './results/'
 logging.basicConfig(filename='et-al-run.log', filemode='w', level=logging.INFO)
 
 data_all = pd.read_pickle(data_dir + 'data_cleaned.pkl')
-cgcnn_features_all = pd.read_pickle(data_dir + 'cgcnn_embeddings.pkl').feature
-
-cgcnn_features = cgcnn_features_all.loc[data_all.index]
+cgcnn_features = pd.read_pickle(data_dir + 'cgcnn_embeddings.pkl').feature
 cgcnn_features = pd.Series([np.asarray(row) for row in cgcnn_features], index=data_all.index)
 
 # ===== Split dataset =====
@@ -187,7 +185,7 @@ plt.title('Information entropies')
 plt.savefig(result_dir + 'info_entropy_evolution.png', dpi=200)
 
 # Save results to files
-entropies.to_pickle(result_dir + 'info_entropy_evolution.pkl')
+entropies.to_csv(result_dir + 'info_entropy_evolution.csv')
 sample_path.tofile(result_dir+'sample_path.csv', sep=',', format='%d')
 data_test.index.to_numpy().tofile(result_dir + 'data_test.csv', sep=',', format='%d')
 data_l.index.to_numpy().tofile(result_dir + 'data_l.csv', sep=',', format='%d')
