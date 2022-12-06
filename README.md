@@ -40,7 +40,17 @@ Zhang, H., Chen, W. W., Rondinelli, J. M., and Chen W. (2022). ET-AL: entropy-ta
 ## Usage
 ### Set up environment
 
+Navigate to the code directory and create the environment:
 
+```bash
+conda env create -f environment.yml
+```
+
+Then activate the new environment:
+
+```bash
+conda activate gp-torch
+```
 
 ### Data preparation
 Organize the dataset in a Data Frame and change the data paths in `etal_main.py`. For demonstration purposes, a dataset derived from the Jarvis CFID data is provided in `datasets/`: the crystal structures and properties are in `data_cleaned.pkl`, and the graph embeddings are in `cgcnn_embeddings.pkl`.
