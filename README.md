@@ -59,6 +59,8 @@ conda activate gp-torch
 ### Data preparation
 Organize the dataset in a Data Frame and change the data paths in `etal_main.py`. For demonstration purposes, a dataset derived from the Jarvis CFID data is provided in `datasets/`: the crystal structures and properties are in `data_cleaned.pkl`, and the graph embeddings are in `cgcnn_embeddings.pkl`.
 
+*Note: [`git-lfs`](https://git-lfs.com/) is required for `data_cleaned.pkl` to be downloaded properly. Please download the file manually if you do not have `git-lfs`.
+
 ### Run code
 
 1. Set up experimental parameters in `etal_main.py`: `n_iter` for maximum number of ET-AL iterations, `n_test` for number of data points left as test set, `n_unlabeled` for number of data points left as unlabeled. Edit the following part to change the selection of unlabeled data.
