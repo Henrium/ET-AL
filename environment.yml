@@ -11,6 +11,7 @@ dependencies:
   - matplotlib
   - matplotlib-base
   - matplotlib-inline
+  - numpy
   - numpy-base
   - pandas
   - pip
@@ -20,7 +21,6 @@ dependencies:
   - seaborn
   - pip:
     - gpytorch==1.8.0
-    - numpy==1.20.0
     - scikit-learn==1.0.2
     - threadpoolctl==3.1.0
     - torch==1.10.0
