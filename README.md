@@ -4,7 +4,7 @@
 
 This repository contains an implementation of entropy-targeted active learning (ET-AL) for materials data bias mitigation, associated with our paper.
 
-![ET-AL algorithm](./etal_algorithm.png)
+![ET-AL algorithm](./etal_algorithm.webp)
 
 ## Copyright
 This code is open-sourced under the MIT license. Feel free to use all or portions for your research or related projects so long as you provide the following citation information:
