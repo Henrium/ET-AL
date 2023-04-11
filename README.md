@@ -9,17 +9,19 @@ This repository contains an implementation of entropy-targeted active learning (
 ## Copyright
 This code is open-sourced under the MIT license. Feel free to use all or portions for your research or related projects so long as you provide the following citation information:
 
-> Zhang, H., Chen, W. W., Rondinelli, J. M., and Chen W. (2023). [ET-AL: entropy-targeted active learning for bias mitigation in materials data](https://arxiv.org/abs/2211.07881). arXiv:2211.07881; Applied Physics Reviews (accepted).
+> Hengrui Zhang, Wei (Wayne) Chen, James M. Rondinelli, and Wei Chen, [ET-AL: Entropy-targeted active learning for bias mitigation in materials data](https://doi.org/10.1063/5.0138913), Applied Physics Reviews 10, 021403 (2023).
 
 ```
-@misc{zhang2022etal,
+@article{zhang2023etal,
     author = {Zhang, Hengrui and Chen, Wei Wayne and Rondinelli, James M. and Chen, Wei},
     title = {ET-AL: entropy-targeted active learning for bias mitigation in materials data},
-    howpublished = {arXiv preprint arXiv:2211.07881},
-    year = {2022},
-    doi = {10.48550/ARXIV.2211.07881},
-    url = {https://arxiv.org/abs/2211.07881},
-    publisher = {arXiv}
+    journal = {Applied Physics Reviews},
+    volume = {10},
+    number = {2},
+    pages = {021403},
+    year = {2023},
+    doi = {10.1063/5.0138913},
+    url = {https://doi.org/10.1063/5.0138913}
 }
 ```
 
