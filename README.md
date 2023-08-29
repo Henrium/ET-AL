@@ -62,7 +62,7 @@ conda activate gp-torch
 ### Data preparation
 Organize the dataset in a Data Frame and change the data paths in `etal_main.py`. For demonstration purposes, a dataset derived from the Jarvis CFID data is provided in `datasets/`: the crystal structures and properties are in `data_cleaned.pkl`, and the graph embeddings are in `cgcnn_embeddings.pkl`.
 
-*Note: [`git-lfs`](https://git-lfs.com/) is required for `data_cleaned.pkl` to be downloaded properly. Please download the file manually if you do not have `git-lfs`.
+*Note: [Git LFS](https://git-lfs.com/) is required for `data_cleaned.pkl` to be downloaded properly. Please download the file manually if you do not have Git LFS.
 
 ### Run code
 
