@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite the following work."
+authors:
+  - family-names: Zhang
+    given-names: Hengrui
+  - family-names: Chen
+    given-names: Wei Wayne
+  - family-names: Rondinelli
+    given-names: James M.
+  - family-names: Chen
+    given-names: Wei
+title: "ET-AL: Entropy-targeted active learning for bias mitigation in materials data"
+version: 1
+doi: 10.1063/5.0138913
+date-released: 2023
+journal: "Applied Physics Reviews"
+volume: 10
+issue: 2
+pages: 021403
+url: "https://doi.org/10.1063/5.0138913"
+type: article
