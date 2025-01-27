@@ -15,6 +15,6 @@ year: 2023
 journal: "Applied Physics Reviews"
 volume: 10
 issue: 2
-pages: 021403
+start: 021403
 url: "https://doi.org/10.1063/5.0138913"
 type: article
