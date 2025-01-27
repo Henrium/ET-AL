@@ -10,9 +10,8 @@ authors:
   - family-names: Chen
     given-names: Wei
 title: "ET-AL: Entropy-targeted active learning for bias mitigation in materials data"
-version: 1
 doi: 10.1063/5.0138913
-date-released: 2023
+year: 2023
 journal: "Applied Physics Reviews"
 volume: 10
 issue: 2
