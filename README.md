@@ -11,21 +11,6 @@ This code is open-sourced under the MIT license. Feel free to use all or portion
 
 > Hengrui Zhang, Wei (Wayne) Chen, James M. Rondinelli, and Wei Chen, [ET-AL: Entropy-targeted active learning for bias mitigation in materials data](https://doi.org/10.1063/5.0138913), Applied Physics Reviews 10, 021403 (2023).
 
-```
-@article{zhang2023etal,
-    author = {Zhang, Hengrui and Chen, Wei Wayne and Rondinelli, James M. and Chen, Wei},
-    title = {ET-AL: entropy-targeted active learning for bias mitigation in materials data},
-    journal = {Applied Physics Reviews},
-    volume = {10},
-    number = {2},
-    pages = {021403},
-    year = {2023},
-    doi = {10.1063/5.0138913},
-    url = {https://doi.org/10.1063/5.0138913}
-}
-```
-
-
 ## Descriptions
 `etal_main.py` implements the ET-AL algorithm and demonstrates on the Jarvis-CFID dataset.
 
