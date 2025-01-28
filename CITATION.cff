@@ -1,20 +1,28 @@
 cff-version: 1.2.0
 message: "If you use this repository, please cite the following work."
 authors:
-  - family-names: Zhang
-    given-names: Hengrui
-  - family-names: Chen
-    given-names: Wei Wayne
-  - family-names: Rondinelli
-    given-names: James M.
-  - family-names: Chen
-    given-names: Wei
-title: "ET-AL: Entropy-targeted active learning for bias mitigation in materials data"
-doi: 10.1063/5.0138913
-year: 2023
-journal: "Applied Physics Reviews"
-volume: 10
-issue: 2
-start: 021403
-url: "https://doi.org/10.1063/5.0138913"
-type: article
+  - family-names: "Zhang"
+    given-names: "Hengrui"
+    orcid: "https://orcid.org/0000-0002-3183-1654"
+title: "ET-AL: Entropy-targeted active learning"
+date-released: 2023-02-20
+url: "https://github.com/Henrium/ET-AL"
+version: 1.0.0
+preferred-citation:
+  authors:
+    - family-names: "Zhang"
+      given-names: "Hengrui"
+    - family-names: "Chen"
+      given-names: "Wei Wayne"
+    - family-names: "Rondinelli"
+      given-names: "James M."
+    - family-names: "Chen"
+      given-names: "Wei"
+  title: "ET-AL: Entropy-targeted active learning for bias mitigation in materials data"
+  doi: 10.1063/5.0138913
+  year: 2023
+  journal: "Applied Physics Reviews"
+  volume: 10
+  issue: 2
+  start: 021403
+  type: article
